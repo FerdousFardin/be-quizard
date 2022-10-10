@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Main } from "./layouts/Main";
 import { Error } from "./components/Error/Error";
 import { Topic } from "./components/Topic/Topic";
+import { Quiz } from "./components/Quiz/Quiz";
 
 function App() {
   const topicsLoader = () =>
@@ -16,6 +17,14 @@ function App() {
       children: [
         { path: "/", element: <Topic />, loader: topicsLoader },
         { path: "/topics", element: <Topic />, loader: topicsLoader },
+        {
+          path: "/topics/:topicId",
+          element: <Quiz />,
+          loader: ({ params }) =>
+            fetch(
+              `https://openapi.programming-hero.com/api/quiz/${params.topicId}`
+            ),
+        },
         { path: "/statistics", element: <div /> },
         { path: "/blog", element: <div /> },
       ],
