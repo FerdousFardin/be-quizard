@@ -12,12 +12,14 @@ export const TopicDetails = ({ topic: { id, name, total, logo } }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title md:text-2xl lg:text-3xl">{name}</h2>
+        <h2 className="card-title md:text-2xl lg:text-3xl custom-font tracking-wide">
+          {name}
+        </h2>
         <p className="lg:text-xl">
           Total Questions: <strong>{total}</strong>
         </p>
         <div className="card-actions justify-end">
-          <button className="btn">
+          <button className="btn md:text-lg lg:text-xl custom-font tracking-wider w-full">
             Start Practice <ArrowSmallRightIcon className="h-6 w-6 ml-1" />
           </button>
         </div>

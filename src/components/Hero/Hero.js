@@ -12,15 +12,19 @@ export const Hero = () => {
       </h1>
       <p className="custom-font text-lg md:text-xl lg:text-2xl font-md tracking-wide">
         These test are designed to assess your technical knowledge in
-        <span className="badge badge-success rounded-sm badge-outline px-1 mx-1 badge-lg">
+        <span className="badge badge-success rounded-sm px-1 mx-1 badge-lg">
+          Git
+        </span>
+        ,
+        <span className="badge badge-success rounded-sm px-1  mx-1 badge-lg">
           CSS
         </span>
         ,
-        <span className="badge badge-success rounded-sm badge-outline px-1  mx-1 badge-lg">
+        <span className="badge badge-success rounded-sm px-1  mx-1 badge-lg">
           JavaScript
         </span>
         and
-        <span className="badge badge-success rounded-sm badge-outline px-1  mx-1 badge-lg">
+        <span className="badge badge-success rounded-sm px-1  mx-1 badge-lg">
           React
         </span>
         as an junior Front-End Developer.
