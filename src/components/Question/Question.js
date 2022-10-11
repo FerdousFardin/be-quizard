@@ -9,6 +9,17 @@ export const Question = ({
   question: { question, options, correctAnswer },
   index,
 }) => {
+  const showAnswer = () =>
+    toast.info(correctAnswer, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "colored",
+    });
   const questionElement = parse(question);
   return (
     <div className="card shadow-xl p-5 bg-base-200">
@@ -17,7 +28,7 @@ export const Question = ({
           Q{index + 1 + "."}
           {questionElement}
         </span>
-        <button className="active:scale-90">
+        <button onClick={showAnswer} className="active:scale-90">
           <EyeIcon className="w-6 h-6"></EyeIcon>
         </button>
       </div>
@@ -26,18 +37,7 @@ export const Question = ({
           <Option correctAnswer={correctAnswer} option={option} key={idx} />
         ))}
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-        theme="colored"
-      />
+      <ToastContainer />
     </div>
   );
 };
