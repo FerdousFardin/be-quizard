@@ -6,6 +6,7 @@ import { Error } from "./components/Error/Error";
 import { Topic } from "./components/Topic/Topic";
 import { Quiz } from "./components/Quiz/Quiz";
 import { Statistics } from "./components/Statistics/Statistics";
+import { Blog } from "./components/Blog/Blog";
 
 function App() {
   const topicsLoader = () =>
@@ -31,7 +32,7 @@ function App() {
           element: <Statistics />,
           loader: topicsLoader,
         },
-        { path: "/blog", element: <div /> },
+        { path: "/blog", element: <Blog /> },
       ],
     },
   ]);
