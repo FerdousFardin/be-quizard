@@ -10,7 +10,7 @@ export const Question = ({
   index,
 }) => {
   const showAnswer = () =>
-    toast.info(correctAnswer, {
+    toast.info(`Correct Andwer is: ${correctAnswer}`, {
       position: "top-center",
       autoClose: 2000,
       hideProgressBar: true,
@@ -24,7 +24,7 @@ export const Question = ({
   return (
     <div className="card shadow-xl p-5 bg-base-200">
       <div className="flex justify-between">
-        <span className="flex gap-2 text-xl md:text-2xl font-medium">
+        <span className="flex gap-2 text-xl md:text-2xl  font-medium">
           Q{index + 1 + "."}
           {questionElement}
         </span>
@@ -34,7 +34,12 @@ export const Question = ({
       </div>
       <div className="grid md:grid-cols-2 gap-5 my-3">
         {options.map((option, idx) => (
-          <Option correctAnswer={correctAnswer} option={option} key={idx} />
+          <Option
+            index={index}
+            correctAnswer={correctAnswer}
+            option={option}
+            key={idx}
+          />
         ))}
       </div>
       <ToastContainer />
